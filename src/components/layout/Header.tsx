@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import logo from '/public/logo.png';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,8 @@ const Header: React.FC = () => {
     <header className={headerClasses}>
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className={`text-2xl font-bold font-heading ${isScrolled ? 'text-primary' : 'text-white'}`}>
+          <img src={logo} alt="Logo" className="h-10 w-10 mr-2" />
+          <span className={`text-2xl font-extrabold tracking-wide font-heading ${isScrolled ? 'text-primary' : 'text-secondary-light'}`}>
             Turiya Prakalpa
           </span>
         </Link>
