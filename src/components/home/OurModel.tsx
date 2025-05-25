@@ -70,7 +70,6 @@ const OurModel: React.FC = () => {
         >
           {/* Desktop Timeline */}
           <div className="hidden md:block">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2"></div>
             <div className="grid grid-cols-5 gap-4">
               {steps.map((step, index) => (
                 <motion.div key={index} variants={itemVariants} className="flex flex-col items-center">
