@@ -8,63 +8,72 @@ const Hero: React.FC = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
   const particlesRef = useRef<THREE.Points | null>(null);
 
-  useEffect(() => {
-    if (!mountRef.current) return;
+useEffect(() => {
+  if (!mountRef.current) return;
 
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0a0a0a);
+  // Check if mobile
+  const isMobile = window.innerWidth < 768;
+  const isLowPerformance = navigator.hardwareConcurrency < 4;
 
-    // Camera setup
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
+  // Scene setup
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0a0a0a);
 
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    mountRef.current.appendChild(renderer.domElement);
+  // Camera setup
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+  camera.position.z = 5;
 
-    // Particle system
-    const particleCount = 1000;
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const colors = new Float32Array(particleCount * 3);
+  // Renderer setup
+  const renderer = new THREE.WebGLRenderer({ 
+    antialias: !isMobile, // Disable antialiasing on mobile
+    powerPreference: 'high-performance'
+  });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+  mountRef.current.appendChild(renderer.domElement);
+
+  // Particle system with reduced count for mobile
+  const particleCount = isMobile ? 300 : (isLowPerformance ? 500 : 1000);
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particleCount * 3);
+  const colors = new Float32Array(particleCount * 3);
+  
+  for (let i = 0; i < particleCount * 3; i += 3) {
+    positions[i] = (Math.random() - 0.5) * 10;
+    positions[i + 1] = (Math.random() - 0.5) * 10;
+    positions[i + 2] = (Math.random() - 0.5) * 10;
     
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 10;
-      positions[i + 1] = (Math.random() - 0.5) * 10;
-      positions[i + 2] = (Math.random() - 0.5) * 10;
-      
-      // Mix of primary and secondary colors
-      const color = Math.random() > 0.5 
-        ? new THREE.Color(0x3d31fb) 
-        : new THREE.Color(0xd129a4);
-      colors[i] = color.r;
-      colors[i + 1] = color.g;
-      colors[i + 2] = color.b;
-    }
-    
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    // Mix of primary and secondary colors
+    const color = Math.random() > 0.5 
+      ? new THREE.Color(0x3d31fb) 
+      : new THREE.Color(0xd129a4);
+    colors[i] = color.r;
+    colors[i + 1] = color.g;
+    colors[i + 2] = color.b;
+  }
+  
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    const material = new THREE.PointsMaterial({
-      size: 0.05,
-      vertexColors: true,
-      blending: THREE.AdditiveBlending,
-      transparent: true,
-      opacity: 0.8
-    });
+  const material = new THREE.PointsMaterial({
+    size: isMobile ? 0.08 : 0.05,
+    vertexColors: true,
+    blending: THREE.AdditiveBlending,
+    transparent: true,
+    opacity: 0.8
+  });
 
-    const particles = new THREE.Points(geometry, material);
-    particlesRef.current = particles;
-    scene.add(particles);
+  const particles = new THREE.Points(geometry, material);
+  particlesRef.current = particles;
+  scene.add(particles);
 
+  // Skip lines on mobile for performance
+  if (!isMobile) {
     // Connecting lines
     const lineGeometry = new THREE.BufferGeometry();
     const linePositions = new Float32Array(200 * 6);
@@ -99,65 +108,60 @@ const Hero: React.FC = () => {
     
     const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lines);
+  }
 
-    // Mouse tracking
-    const handleMouseMove = (event: MouseEvent) => {
+  // Mouse tracking - disable on mobile
+  const handleMouseMove = (event: MouseEvent) => {
+    if (!isMobile) {
       mouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
       mouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
+    }
+  };
 
-    const handleTouchMove = (event: TouchEvent) => {
-      if (event.touches.length > 0) {
-        mouseRef.current.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
-        mouseRef.current.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
-      }
-    };
+  window.addEventListener('mousemove', handleMouseMove);
 
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
+  // Animation loop with reduced speed on mobile
+  let animationId: number;
+  const animate = () => {
+    animationId = requestAnimationFrame(animate);
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
+    // Idle rotation
+    if (particlesRef.current) {
+      particlesRef.current.rotation.x += isMobile ? 0.0002 : 0.0005;
+      particlesRef.current.rotation.y += isMobile ? 0.0001 : 0.0003;
+    }
 
-      // Idle rotation
-      if (particlesRef.current) {
-        particlesRef.current.rotation.x += 0.0005;
-        particlesRef.current.rotation.y += 0.0003;
-      }
-      
-      lines.rotation.x -= 0.0003;
-      lines.rotation.y -= 0.0005;
+    // Subtle mouse response
+    if (!isMobile && particlesRef.current) {
+      particlesRef.current.rotation.x += mouseRef.current.y * 0.001;
+      particlesRef.current.rotation.y += mouseRef.current.x * 0.001;
+    }
 
-      // Subtle mouse response
-      if (particlesRef.current) {
-        particlesRef.current.rotation.x += mouseRef.current.y * 0.001;
-        particlesRef.current.rotation.y += mouseRef.current.x * 0.001;
-      }
+    renderer.render(scene, camera);
+  };
 
-      renderer.render(scene, camera);
-    };
+  animate();
 
-    animate();
+  // Handle resize
+  const handleResize = () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  };
 
-    // Handle resize
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
+  window.addEventListener('resize', handleResize);
 
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('resize', handleResize);
-      mountRef.current?.removeChild(renderer.domElement);
-      renderer.dispose();
-    };
-  }, []);
+  // Cleanup
+  return () => {
+    cancelAnimationFrame(animationId);
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('resize', handleResize);
+    mountRef.current?.removeChild(renderer.domElement);
+    renderer.dispose();
+    geometry.dispose();
+    material.dispose();
+  };
+}, []);
 
   return (
     <section className="relative h-screen flex items-center text-white overflow-hidden">

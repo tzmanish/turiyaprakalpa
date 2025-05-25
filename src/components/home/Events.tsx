@@ -188,21 +188,23 @@ const Events: React.FC = () => {
               <motion.div 
                 key={`upcoming-${index}`}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-lg shadow-card hover:shadow-card-hover transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-card hover:shadow-card-hover transition-shadow flex flex-col h-full"
               >
-                <h4 className="text-lg font-bold mb-2">{event.title}</h4>
-                <div className="flex flex-wrap gap-4 mb-3 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    <span>{event.date}</span>
+                <div className="flex-grow">
+                  <h4 className="text-lg font-bold mb-2">{event.title}</h4>
+                  <div className="flex flex-wrap gap-4 mb-3 text-sm text-gray-600">
+                    <div className="flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="w-4 h-4 mr-1" />
+                      <span>{event.location}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    <span>{event.location}</span>
-                  </div>
+                  <p className="text-gray-600 mb-4">{event.description}</p>
                 </div>
-                <p className="text-gray-600 mb-4">{event.description}</p>
-                <button className="text-primary hover:text-primary-dark transition-colors font-medium text-sm">
+                <button className="text-primary hover:text-primary-dark transition-colors font-medium text-sm mt-auto">
                   Learn More →
                 </button>
               </motion.div>

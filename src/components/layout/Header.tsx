@@ -7,6 +7,23 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Handle body scroll lock
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -84,17 +101,24 @@ const Header: React.FC = () => {
           aria-label="Toggle menu"
         >
           {isOpen ? (
-            <X className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+            <X className="w-6 h-6 text-gray-800" />
           ) : (
             <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
           )}
         </button>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation with Backdrop */}
+        {isOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            onClick={closeMenu}
+          />
+        )}
+        
         <div
-          className={`fixed top-0 right-0 h-full w-full bg-white z-40 transform transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-40 transform transition-transform duration-300 ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
-          } md:hidden`}
+          } md:hidden shadow-xl`}
         >
           <div className="flex flex-col p-8 pt-20 space-y-6">
             <Link
@@ -118,8 +142,8 @@ const Header: React.FC = () => {
             >
               About
             </Link>
-            <a
-              href="#contact"
+            <a 
+            href="#contact"
               className="text-xl font-medium text-white bg-primary py-3 px-6 rounded-md text-center"
               onClick={closeMenu}
             >

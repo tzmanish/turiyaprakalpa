@@ -85,25 +85,27 @@ const OurModel: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Steps */}
-          <div className="md:hidden">
-            <div className="absolute top-0 bottom-0 left-8 w-1 bg-gray-200"></div>
-            <div className="space-y-12">
-              {steps.map((step, index) => (
-                <motion.div key={index} variants={itemVariants} className="relative flex ml-16">
-                  <div className={`absolute -left-24 z-10 w-16 h-16 rounded-full flex items-center justify-center ${
-                    index % 2 === 0 ? 'bg-primary text-white' : 'bg-secondary text-white'
-                  }`}>
-                    {step.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+        {/* Mobile Steps */}
+        <div className="md:hidden space-y-8">
+          {steps.map((step, index) => (
+            <motion.div key={index} variants={itemVariants} className="relative">
+              <div className="flex items-start">
+                <div className={`flex-shrink-0 z-10 w-16 h-16 rounded-full flex items-center justify-center mr-4 ${
+                  index % 2 === 0 ? 'bg-primary text-white' : 'bg-secondary text-white'
+                }`}>
+                  {step.icon}
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
+              </div>
+              {index < steps.length - 1 && (
+                <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-gray-200 -z-10"></div>
+              )}
+            </motion.div>
+          ))}
+        </div>
         </motion.div>
 
         <div className="mt-16 max-w-3xl mx-auto text-center">

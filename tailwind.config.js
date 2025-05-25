@@ -33,13 +33,27 @@ export default {
           100: '#f5f7fa',
           200: '#e4e7eb',
           300: '#cbd2d9',
-          400: '#9aa5b1',
-          500: '#7b8794',
-          600: '#616e7c',
-          700: '#4a5568',
-          800: '#323f4b',
-          900: '#1f2933',
+          400: '#6b7280', // Changed from #9aa5b1
+          500: '#4b5563', // Changed from #7b8794
+          600: '#374151', // Changed from #616e7c
+          700: '#1f2937', // Changed from #4a5568
+          800: '#111827', // Changed from #323f4b
+          900: '#030712', // Changed from #1f2933
         },
+      },
+      fontSize: {
+        'fluid-sm': 'clamp(0.875rem, 2vw, 1rem)',
+        'fluid-base': 'clamp(1rem, 2.5vw, 1.125rem)',
+        'fluid-lg': 'clamp(1.125rem, 3vw, 1.25rem)',
+        'fluid-xl': 'clamp(1.25rem, 3.5vw, 1.5rem)',
+        'fluid-2xl': 'clamp(1.5rem, 4vw, 2rem)',
+        'fluid-3xl': 'clamp(2rem, 5vw, 3rem)',
+        'fluid-4xl': 'clamp(2.5rem, 6vw, 3.75rem)',
+        'fluid-5xl': 'clamp(3rem, 7vw, 4.5rem)',
+      },
+      screens: {
+        'xs': '475px',
+        '3xl': '1920px',
       },
       fontFamily: {
         heading: ['Poppins', 'sans-serif'],
