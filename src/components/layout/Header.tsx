@@ -58,7 +58,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={headerClasses}>
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between px-4 md:px-8">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Logo" className="h-10 w-10 mr-2" />
           <span className={`text-2xl font-extrabold tracking-wide font-heading ${isScrolled ? 'text-primary' : 'text-secondary-light'}`}>
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 items-center">
           <Link
             to="/"
             className={location.pathname === '/' ? activeLinkClasses : linkClasses}
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden z-50 focus:outline-none"
+          className="md:hidden z-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -108,50 +108,50 @@ const Header: React.FC = () => {
             <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
           )}
         </button>
+      </div>
 
-        {/* Mobile Navigation with Backdrop */}
-        {isOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+      {/* Mobile Navigation with Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={closeMenu}
+        />
+      )}
+      
+      <div
+        className={`fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-40 transform transition-transform duration-300 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } md:hidden shadow-xl`}
+      >
+        <div className="flex flex-col p-8 pt-20 space-y-6">
+          <Link
+            to="/"
+            className={`text-xl font-medium ${location.pathname === '/' ? 'text-primary' : 'text-gray-800'}`}
             onClick={closeMenu}
-          />
-        )}
-        
-        <div
-          className={`fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-40 transform transition-transform duration-300 ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          } md:hidden shadow-xl`}
-        >
-          <div className="flex flex-col p-8 pt-20 space-y-6">
-            <Link
-              to="/"
-              className={`text-xl font-medium ${location.pathname === '/' ? 'text-primary' : 'text-gray-800'}`}
-              onClick={closeMenu}
-            >
-              Home
-            </Link>
-            <Link
-              to="/program"
-              className={`text-xl font-medium ${location.pathname === '/program' ? 'text-primary' : 'text-gray-800'}`}
-              onClick={closeMenu}
-            >
-              Our Program
-            </Link>
-            <Link
-              to="/about"
-              className={`text-xl font-medium ${location.pathname === '/about' ? 'text-primary' : 'text-gray-800'}`}
-              onClick={closeMenu}
-            >
-              About
-            </Link>
-            <a 
-            href="#contact"
-              className="text-xl font-medium text-white bg-primary py-3 px-6 rounded-md text-center"
-              onClick={closeMenu}
-            >
-              Contact Us
-            </a>
-          </div>
+          >
+            Home
+          </Link>
+          <Link
+            to="/program"
+            className={`text-xl font-medium ${location.pathname === '/program' ? 'text-primary' : 'text-gray-800'}`}
+            onClick={closeMenu}
+          >
+            Our Program
+          </Link>
+          <Link
+            to="/about"
+            className={`text-xl font-medium ${location.pathname === '/about' ? 'text-primary' : 'text-gray-800'}`}
+            onClick={closeMenu}
+          >
+            About
+          </Link>
+          <a 
+          href="#contact"
+            className="text-xl font-medium text-white bg-primary py-3 px-6 rounded-md text-center"
+            onClick={closeMenu}
+          >
+            Contact Us
+          </a>
         </div>
       </div>
     </header>
