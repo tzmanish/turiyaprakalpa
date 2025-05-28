@@ -1,172 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import * as THREE from 'three';
 
 const Hero: React.FC = () => {
-  const mountRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const particlesRef = useRef<THREE.Points | null>(null);
-
-useEffect(() => {
-  if (!mountRef.current) return;
-
-  // Check if mobile
-  const isMobile = window.innerWidth < 768;
-  const isLowPerformance = navigator.hardwareConcurrency < 4;
-
-  // Scene setup
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0a0a0a);
-
-  // Camera setup
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  camera.position.z = 5;
-
-  // Renderer setup
-  const renderer = new THREE.WebGLRenderer({ 
-    antialias: !isMobile, // Disable antialiasing on mobile
-    powerPreference: 'high-performance'
-  });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
-  mountRef.current.appendChild(renderer.domElement);
-
-  // Particle system with reduced count for mobile
-  const particleCount = isMobile ? 300 : (isLowPerformance ? 500 : 1000);
-  const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
-  
-  for (let i = 0; i < particleCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 10;
-    positions[i + 1] = (Math.random() - 0.5) * 10;
-    positions[i + 2] = (Math.random() - 0.5) * 10;
-    
-    // Mix of primary and secondary colors
-    const color = Math.random() > 0.5 
-      ? new THREE.Color(0x3d31fb) 
-      : new THREE.Color(0xd129a4);
-    colors[i] = color.r;
-    colors[i + 1] = color.g;
-    colors[i + 2] = color.b;
-  }
-  
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-  const material = new THREE.PointsMaterial({
-    size: isMobile ? 0.08 : 0.05,
-    vertexColors: true,
-    blending: THREE.AdditiveBlending,
-    transparent: true,
-    opacity: 0.8
-  });
-
-  const particles = new THREE.Points(geometry, material);
-  particlesRef.current = particles;
-  scene.add(particles);
-
-  // Skip lines on mobile for performance
-  if (!isMobile) {
-    // Connecting lines
-    const lineGeometry = new THREE.BufferGeometry();
-    const linePositions = new Float32Array(200 * 6);
-    const lineColors = new Float32Array(200 * 6);
-    
-    for (let i = 0; i < 200 * 6; i += 6) {
-      linePositions[i] = (Math.random() - 0.5) * 10;
-      linePositions[i + 1] = (Math.random() - 0.5) * 10;
-      linePositions[i + 2] = (Math.random() - 0.5) * 10;
-      linePositions[i + 3] = (Math.random() - 0.5) * 10;
-      linePositions[i + 4] = (Math.random() - 0.5) * 10;
-      linePositions[i + 5] = (Math.random() - 0.5) * 10;
-      
-      const color = new THREE.Color(0x3d31fb);
-      lineColors[i] = color.r * 0.3;
-      lineColors[i + 1] = color.g * 0.3;
-      lineColors[i + 2] = color.b * 0.3;
-      lineColors[i + 3] = color.r * 0.3;
-      lineColors[i + 4] = color.g * 0.3;
-      lineColors[i + 5] = color.b * 0.3;
-    }
-    
-    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-    lineGeometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
-    
-    const lineMaterial = new THREE.LineBasicMaterial({
-      vertexColors: true,
-      blending: THREE.AdditiveBlending,
-      transparent: true,
-      opacity: 0.3
-    });
-    
-    const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-    scene.add(lines);
-  }
-
-  // Mouse tracking - disable on mobile
-  const handleMouseMove = (event: MouseEvent) => {
-    if (!isMobile) {
-      mouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    }
-  };
-
-  window.addEventListener('mousemove', handleMouseMove);
-
-  // Animation loop with reduced speed on mobile
-  let animationId: number;
-  const animate = () => {
-    animationId = requestAnimationFrame(animate);
-
-    // Idle rotation
-    if (particlesRef.current) {
-      particlesRef.current.rotation.x += isMobile ? 0.0002 : 0.0005;
-      particlesRef.current.rotation.y += isMobile ? 0.0001 : 0.0003;
-    }
-
-    // Subtle mouse response
-    if (!isMobile && particlesRef.current) {
-      particlesRef.current.rotation.x += mouseRef.current.y * 0.001;
-      particlesRef.current.rotation.y += mouseRef.current.x * 0.001;
-    }
-
-    renderer.render(scene, camera);
-  };
-
-  animate();
-
-  // Handle resize
-  const handleResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  };
-
-  window.addEventListener('resize', handleResize);
-
-  // Cleanup
-  return () => {
-    cancelAnimationFrame(animationId);
-    window.removeEventListener('mousemove', handleMouseMove);
-    window.removeEventListener('resize', handleResize);
-    mountRef.current?.removeChild(renderer.domElement);
-    renderer.dispose();
-    geometry.dispose();
-    material.dispose();
-  };
-}, []);
-
   return (
-    <section className="relative h-screen flex items-center text-white overflow-hidden">
-      <div ref={mountRef} className="absolute inset-0" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
+    <section className="relative h-screen flex items-center text-white overflow-hidden bg-gradient-to-br from-gray-900 via-primary-dark to-secondary-dark">
+      {/* CSS Particle Background */}
+      <div className="absolute inset-0">
+        {/* Gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
+        
+        {/* Animated particles */}
+        <div className="particles">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="particle"
+              style={{
+                '--x': Math.random(),
+                '--y': Math.random(),
+                '--duration': 15 + Math.random() * 20,
+                '--delay': Math.random() * 20,
+                '--size': 2 + Math.random() * 4,
+              } as React.CSSProperties}
+            />
+          ))}
+        </div>
+
+        {/* Floating orbs for visual interest */}
+        <div className="orbs">
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
+          <div className="orb orb-3"></div>
+        </div>
+      </div>
       
       <div className="container relative z-10">
         <motion.div
