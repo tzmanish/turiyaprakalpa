@@ -72,8 +72,8 @@ const ProgramTeaser: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all"
+              whileHover={{ y: -2, transition: { duration: 0.1 } }}
+              className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20"
             >
               <div className={`w-12 h-12 ${tier.color} rounded-full flex items-center justify-center text-xl font-bold mb-4`}>
                 {tier.number}
