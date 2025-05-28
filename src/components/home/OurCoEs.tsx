@@ -25,34 +25,24 @@ const OurCoEs: React.FC = () => {
 
   const coes = [
     {
-      name: "Patna Women's College",
-      location: "Bihar",
+      name: "Indian Institute of Business Management (IIBM)",
+      location: "Patna, Bihar",
       status: "launched",
       date: "2025",
-      description: "50+ students enrolled in CoE programs, working on AgriAI projects.",
+      description: "30 students enrolled in CoE programs, working on business analytics and AI for commerce applications.",
       icon: <Check className="w-5 h-5" />,
       statusColor: "bg-green-500",
       statusText: "Launched"
     },
     {
-      name: "Ranchi Institute of Technology",
-      location: "Jharkhand",
-      status: "launching",
-      date: "Jan 2026",
-      description: "Faculty training in progress, lab equipment installed.",
-      icon: <Clock className="w-5 h-5" />,
-      statusColor: "bg-yellow-500",
-      statusText: "Launching Soon"
-    },
-    {
-      name: "Bilaspur University",
-      location: "Chhattisgarh",
-      status: "planned",
-      date: "2026",
-      description: "CoE setup to begin, focusing on AI in healthcare.",
-      icon: <FileText className="w-5 h-5" />,
-      statusColor: "bg-blue-500",
-      statusText: "MoU Signed"
+      name: "Dr. Zakir Husain Institute (ZHI)",
+      location: "Patna, Bihar",
+      status: "launched",
+      date: "2025",
+      description: "50 students enrolled in CoE programs, focusing on AI for engineering and technology solutions.",
+      icon: <Check className="w-5 h-5" />,
+      statusColor: "bg-green-500",
+      statusText: "Launched"
     }
   ];
 
