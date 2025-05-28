@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import harsh from '../../public/people/harsh.png';
+import manish from '../../public/people/manish.png';
+import divyanshu from '../../public/people/divyanshu.png';
+import sandeep from '../../public/people/sandeep.png';
+import gaurav from '../../public/people/gaurav.png';
+import ashish from '../../public/people/ashish.jpeg';
 
 interface TeamMember {
   name: string;
@@ -43,7 +49,7 @@ const AboutPage: React.FC = () => {
       affiliation: "IIT Roorkee",
       linkedin: "https://www.linkedin.com/in/krhharsh/",
       type: "team",
-      image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: harsh
     },
     {
       name: "Manish Kushwaha",
@@ -52,7 +58,7 @@ const AboutPage: React.FC = () => {
       affiliation: "IIT Roorkee",
       linkedin: "https://www.linkedin.com/in/tzman/",
       type: "team",
-      image: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: manish
     },
     {
       name: "Divyanshu Verma",
@@ -61,7 +67,7 @@ const AboutPage: React.FC = () => {
       affiliation: "IIM Bangalore, IIT Delhi, BHU",
       linkedin: "https://www.linkedin.com/in/divyanshu-verma-6b05732/",
       type: "advisor",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: divyanshu
     },
     {
       name: "Sandeep Agarwal",
@@ -69,7 +75,7 @@ const AboutPage: React.FC = () => {
       expertise: "Thought leader in digital innovation, strategy, technology leadership. Author of P.R.I.D.E. Recipient of Indian Achiever's Award.",
       linkedin: "https://www.linkedin.com/in/sandeepbagarwal/",
       type: "advisor",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: sandeep
     },
     {
       name: "Gaurav Aggarwal",
@@ -78,7 +84,7 @@ const AboutPage: React.FC = () => {
       affiliation: "BTech from IIT Madras, PhD from University of Maryland",
       linkedin: "https://www.linkedin.com/in/gauagg/",
       type: "expert",
-      image: "https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: gaurav
     },
     {
       name: "Ashish Kaushik",
@@ -87,7 +93,7 @@ const AboutPage: React.FC = () => {
       affiliation: "IIT Roorkee",
       linkedin: "https://www.linkedin.com/in/ashish-kaushik/",
       type: "expert",
-      image: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      image: ashish
     }
   ];
 
