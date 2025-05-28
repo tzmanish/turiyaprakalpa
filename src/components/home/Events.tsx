@@ -130,7 +130,7 @@ const Events: React.FC = () => {
   }
 
   return (
-    <section id="events" className="section bg-gray-100">
+    <section id="events" className="section bg-white">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Events & Workshops</h2>

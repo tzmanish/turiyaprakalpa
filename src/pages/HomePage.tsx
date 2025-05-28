@@ -7,7 +7,7 @@ import OurModel from '../components/home/OurModel';
 import ProgramTeaser from '../components/home/ProgramTeaser';
 import RegionFocus from '../components/home/RegionFocus';
 import OurCoEs from '../components/home/OurCoEs';
-import Partners from '../components/home/Partners';
+// import Partners from '../components/home/Partners';
 import Events from '../components/home/Events';
 import WhyThisMatters from '../components/home/WhyThisMatters';
 import AboutParent from '../components/home/AboutParent';
@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
         <ProgramTeaser />
         <RegionFocus />
         <OurCoEs />
-        <Partners />
+        {/* <Partners /> */}
         <Events />
         <WhyThisMatters />
         <AboutParent />
