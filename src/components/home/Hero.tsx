@@ -1,12 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import cover from '../../Assets/Cover.png'
 
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center text-white overflow-hidden bg-gradient-to-br from-gray-900 via-primary-dark to-secondary-dark">
+      {/* Cover Image Background */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={cover} 
+          alt="AI Innovation Cover" 
+          className="w-full h-full object-contain opacity-30 select-none pointer-events-none" 
+          style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+          draggable="false"
+        />
+      </div>
       {/* CSS Particle Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         {/* Gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
         
@@ -36,35 +47,35 @@ const Hero: React.FC = () => {
       </div>
       
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            AI Innovation, Everywhere
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-8 text-gray-100">
-            Building AI Centres of Excellence in underserved regions to empower the next generation of innovators
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              AI Innovation, Everywhere
+            </h1>
+            
+            <p className="text-xl md:text-2xl mb-8 text-gray-100">
+              Building AI Centres of Excellence in underserved regions to empower the next generation of innovators
+            </p>
           
           {/* <div className="mb-10 max-w-2xl">
             <p className="text-gray-200">
               Turiya Prakalpa is on a mission to democratize AI education and innovation. We establish on-campus AI Centres of Excellence that provide curated hands-on workshops, industry exposure, and assist in setting cutting-edge AI labs in regions with low AI enablement or tech integration. Our vision is to nurture talent in every region, unlocking the potential for grassroots problem-solving and innovation.
             </p>
           </div> */}
-          
-          <div className="flex flex-wrap gap-4">
-            <Link to="/program" className="btn-primary">
-              Learn More
-            </Link>
-            <a href="#contact" className="btn bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
-              Partner with Us
-            </a>
-          </div>
-        </motion.div>
+            
+            <div className="flex flex-wrap gap-4">
+              <Link to="/program" className="btn-primary">
+                Learn More
+              </Link>
+              <a href="#contact" className="btn bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
+                Partner with Us
+              </a>
+            </div>
+          </motion.div>
       </div>
       
       <div className="absolute bottom-10 left-0 right-0 flex justify-center">
