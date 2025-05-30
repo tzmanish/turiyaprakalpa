@@ -56,8 +56,23 @@ const WhyThisMatters: React.FC = () => {
           </motion.div>
 
           <div className="mt-12 text-center">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-4 rounded-lg">
-              <p className="text-xl font-medium mb-2">3 CoEs, 500+ students impacted in year 1 – and we're just getting started.</p>
+            <div className="flex flex-wrap justify-center gap-8">
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-bold text-white">02</span>
+                <span className="text-lg text-white/80 mt-1">CoEs</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-bold text-white">150+</span>
+                <span className="text-lg text-white/80 mt-1">Students Impacted</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-bold text-white">05</span>
+                <span className="text-lg text-white/80 mt-1">Colleges</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-4xl md:text-5xl font-bold text-white">02</span>
+                <span className="text-lg text-white/80 mt-1">Workshops</span>
+              </div>
             </div>
           </div>
 
