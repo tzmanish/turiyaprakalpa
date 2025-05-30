@@ -26,6 +26,13 @@ const ValueProps: React.FC = () => {
   return (
     <section id="value-props" className="section bg-gray-100">
       <div className="container">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Value Propositions</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+           We don't just do AI enablement - we build an entire ecosystem around it. Here's how our model creates sustainable AI innovation hubs in colleges.
+          </p>
+        </div>
+
         <motion.div
           ref={ref}
           variants={containerVariants}
