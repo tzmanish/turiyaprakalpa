@@ -80,7 +80,7 @@ const RegionFocus: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/50 to-transparent mix-blend-multiply"></div>
             </div>
             
-            <div className="absolute -bottom-10 -left-10 bg-white p-4 rounded-lg shadow-lg md:max-w-xs">
+            {/* <div className="absolute -bottom-10 -left-10 bg-white p-4 rounded-lg shadow-lg md:max-w-xs">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-lg font-bold text-gray-800">Focus States</h3>
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -107,7 +107,7 @@ const RegionFocus: React.FC = () => {
                   <span>Eastern Uttar Pradesh</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

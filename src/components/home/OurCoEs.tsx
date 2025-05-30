@@ -100,7 +100,7 @@ const OurCoEs: React.FC = () => {
           ))}
         </motion.div>
 
-        <div className="mt-12 bg-white p-6 md:p-8 rounded-lg shadow-card">
+        {/* <div className="mt-12 bg-white p-6 md:p-8 rounded-lg shadow-card">
           <h3 className="text-xl font-bold mb-4">Common Facilities at Every CoE</h3>
           <p className="text-gray-600 mb-6">
             Each center features high-performance computers, AI software tools, internet connectivity, and curated learning resources. Students engage in peer learning, build projects solving local challenges, and connect with our broader network for internships and jobs.
@@ -144,7 +144,7 @@ const OurCoEs: React.FC = () => {
           <p className="mt-6 text-gray-700 italic">
             Our CoEs are where academia meets industry. They host guest lectures, innovation challenges, and even incubate student-led startups. In short, a CoE is a catalyst for a campus's AI ecosystem.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

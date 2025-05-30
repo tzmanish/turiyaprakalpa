@@ -73,14 +73,21 @@ const OurModel: React.FC = () => {
           animate={inView ? 'visible' : 'hidden'}
           className="relative"
         >
-          {/* Desktop Timeline */}
+          {/* Desktop & Tablet Timeline */}
           <div className="hidden md:block">
-            <div className="grid grid-cols-5 gap-4">
+            {/* Large screens: 1 row of 6, Medium screens: 2 rows of 3 */}
+            <div className="grid grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-4">
               {steps.map((step, index) => (
-                <motion.div key={index} variants={itemVariants} className="flex flex-col items-center">
-                  <div className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
-                    index % 2 === 0 ? 'bg-primary text-white' : 'bg-secondary text-white'
-                  }`}>
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="flex flex-col items-center mb-8 lg:mb-0"
+                >
+                  <div
+                    className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
+                      index % 2 === 0 ? 'bg-primary text-white' : 'bg-secondary text-white'
+                    }`}
+                  >
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-center">{step.title}</h3>

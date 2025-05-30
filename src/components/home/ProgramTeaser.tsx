@@ -52,10 +52,7 @@ const ProgramTeaser: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Program - AI for Everyone, differently!</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            A flexible, multi-tier learning path from AI basics to innovation.{' '}
-            <Link to="/program" className="inline-flex items-center font-medium hover:underline whitespace-nowrap">
-              Learn more <ArrowRight className="ml-1 w-4 h-4" />
-            </Link>
+            A flexible, multi-tier learning path from AI basics to innovation.
           </p>
         </div>
 
