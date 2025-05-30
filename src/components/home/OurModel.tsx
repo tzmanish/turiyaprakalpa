@@ -27,17 +27,22 @@ const OurModel: React.FC = () => {
     {
       icon: <Handshake className="w-8 h-8" />,
       title: 'Identify & Partner',
-      description: 'We partner with forward-thinking colleges in Tier 2/3 cities, focusing on regions with low AI awareness.'
+      description: 'We identify & partner with institutions with a vision for AI and innovation.'
     },
     {
       icon: <LayoutGrid className="w-8 h-8" />,
       title: 'Establish AI CoE',
-      description: 'Together, we set up an AI Center of Excellence on campus – equipped with a modern lab, computing resources, and high-speed internet – creating a local innovation hub.'
+      description: 'Centre or Excellence (CoE) or Hub on campus with a modern lab assisted by the institution.'
+    },
+    {
+      icon: <LayoutGrid className="w-8 h-8" />,
+      title: 'Source Problem Statements',
+      description: 'Engage with local administrations, industries, and civil organizations to gather problem statements and obtain relevant data.'
     },
     {
       icon: <Blocks className="w-8 h-8" />,
       title: 'Curriculum & Training',
-      description: 'We bring an industry-aligned AI curriculum, train faculty champions, and run workshops so that students get hands-on experience with AI tools and techniques.'
+      description: 'An industry-aligned AI curriculum; workshops with hands-on experience with AI tools and techniques for both students and faculties.'
     },
     {
       icon: <Users className="w-8 h-8" />,
@@ -57,7 +62,7 @@ const OurModel: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Model</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don't just teach AI – we build an entire ecosystem around it. Here's how our model creates sustainable AI innovation hubs in colleges:
+           A structured program with industry-aligned curriculum, hands-on projects addressing local challenges, mentorship from leading AI professionals, and incubation support to foster student-led startups.
           </p>
         </div>
 

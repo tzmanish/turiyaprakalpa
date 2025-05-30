@@ -48,9 +48,9 @@ const WhyThisMatters: React.FC = () => {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-white/20">
-              <h3 className="text-xl font-bold mb-4">Closing Technology Gaps</h3>
+              <h3 className="text-xl font-bold mb-4">Closing Tech Exposure Gaps</h3>
               <p>
-                Currently, Tier-3 college students often lack access to advanced tech training, leading to a knowledge and opportunity gap. Initiatives like ours aim to close that gap, aligning with India's vision of inclusive growth and a digitally empowered society.
+                Currently, colleges in emerging cities students often lack access to advanced tech training, leading to a knowledge and opportunity gap. Initiatives like ours aim to close that gap, aligning with India's vision of inclusive growth and a digitally empowered society.
               </p>
             </div>
           </motion.div>
