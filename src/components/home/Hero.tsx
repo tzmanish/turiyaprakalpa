@@ -50,11 +50,11 @@ const Hero: React.FC = () => {
             Building AI Centres of Excellence in underserved regions to empower the next generation of innovators
           </p>
           
-          <div className="mb-10 max-w-2xl">
+          {/* <div className="mb-10 max-w-2xl">
             <p className="text-gray-200">
               Turiya Prakalpa is on a mission to democratize AI education and innovation. We establish on-campus AI Centres of Excellence that provide curated hands-on workshops, industry exposure, and assist in setting cutting-edge AI labs in regions with low AI enablement or tech integration. Our vision is to nurture talent in every region, unlocking the potential for grassroots problem-solving and innovation.
             </p>
-          </div>
+          </div> */}
           
           <div className="flex flex-wrap gap-4">
             <Link to="/program" className="btn-primary">

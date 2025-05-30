@@ -18,10 +18,10 @@ const RegionFocus: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Region in Focus: Bharat's Next Tech Frontier</h2>
-            <p className="text-xl text-gray-600 mb-6">Bridging the AI Divide in Tier-2/Tier-3 India</p>
+            <p className="text-xl text-gray-600 mb-6">Bridging the AI Divide in emerging India</p>
             
             <p className="mb-6">
-              India's tech growth has largely centered in a few metro cities. We're changing that by turning underserved regions into the next hubs of AI innovation. Our initial focus is on states like Bihar, Jharkhand, Chhattisgarh, and other regions with immense talent but limited tech opportunities.
+              India's tech growth has largely centered in a few metro cities. We're changing that by turning underserved regions into the next hubs of AI innovation. We are currently collaborating with colleges in states such as Bihar, Chhattisgarh, and Madhya Pradesh, and are eager to expand into other regions that possess immense talent but have limited access to tech opportunities.
             </p>
             
             <ul className="space-y-4">
@@ -42,7 +42,7 @@ const RegionFocus: React.FC = () => {
                   </svg>
                 </div>
                 <p>
-                  <strong className="text-gray-800">Filling Infrastructure Gaps:</strong> Many Tier-2 colleges lack advanced AI labs or industry connections. Our CoEs fill that gap, bringing world-class AI resources to campuses that have been overlooked.
+                  <strong className="text-gray-800">Filling Infrastructure Gaps:</strong> Our CoEs fill the gap for colleges lacking in advanced AI cabilities or relevant indutry exposure by bringing world-class AI resources to campuses. 
                 </p>
               </li>
               <li className="flex">
@@ -52,14 +52,14 @@ const RegionFocus: React.FC = () => {
                   </svg>
                 </div>
                 <p>
-                  <strong className="text-gray-800">Sparking Regional Innovation:</strong> Students in Tier 2/3 colleges intimately understand their region's challenges. By applying AI and innovation to local problems, they don't just gain skills—they build sustainable tech ecosystems that empower communities and spark grassroots innovation.
+                  <strong className="text-gray-800">Sparking Regional Innovation:</strong> Students in regional colleges intimately understand their region's challenges. By applying AI and innovation to local problems, they don't just gain skills—they build sustainable tech ecosystems that empower communities and spark grassroots innovation.
                 </p>
               </li>
             </ul>
             
             <div className="mt-8 p-4 bg-gray-100 rounded-lg border-l-4 border-primary">
               <p className="text-lg font-medium">
-                "In regions like Bihar and Jharkhand, we're not just training students—we're igniting a technological renaissance."
+                "In emerging regions we're not just enabling students—we're igniting a movement. By empowering local talent with AI skills, we're building the next generation of innovators."
               </p>
             </div>
           </motion.div>
