@@ -9,6 +9,8 @@
 # Production
 /build
 /dist
+.next
+out
 
 # Misc
 .DS_Store
@@ -25,7 +27,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
 .idea
 *.suo
@@ -40,3 +42,18 @@ pnpm-debug.log*
 # Cache
 .cache
 .eslintcache
+.stylelintcache
+
+# OS
+Thumbs.db
+
+# Others
+*.log
+*.tgz
+*.local
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.svg
