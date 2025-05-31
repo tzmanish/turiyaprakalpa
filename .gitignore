@@ -55,8 +55,8 @@ Thumbs.db
 *.tgz
 *.local
 
-# Images
-*.png
-*.jpg
-*.jpeg
-*.svg
+# # Images
+# *.png
+# *.jpg
+# *.jpeg
+# *.svg
