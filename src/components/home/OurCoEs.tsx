@@ -31,6 +31,7 @@ const OurCoEs: React.FC = () => {
       date: "2025",
       description: "30 students enrolled in CoE programs, working on business analytics and AI for commerce applications.",
       icon: <Check className="w-5 h-5" />,
+      image: "https://www.sikshapedia.com/public/data/colleges/indian-institute-of-business-management-patna-bihar/indian-institute-of-business-management-patna-bihar-banner.webp",
       statusColor: "bg-green-500",
       statusText: "Launched"
     },
@@ -41,6 +42,7 @@ const OurCoEs: React.FC = () => {
       date: "2025",
       description: "50 students enrolled in CoE programs, focusing on AI for engineering and technology solutions.",
       icon: <Check className="w-5 h-5" />,
+      image: "https://www.zhi.org.in/public/school_content/zhi/fcms_setting/2XY9t-085016-hMk.jpg",
       statusColor: "bg-green-500",
       statusText: "Launched"
     }
@@ -74,7 +76,7 @@ const OurCoEs: React.FC = () => {
             >
               <div className="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
                 <img 
-                  src={`https://images.pexels.com/photos/${3861958 + index}/pexels-photo-${3861958 + index}.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`}
+                  src={coe.image}
                   alt={`${coe.name} campus`}
                   className="w-full h-full object-cover"
                 />
