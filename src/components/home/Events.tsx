@@ -8,6 +8,7 @@ interface Event {
   date: string;
   location: string;
   description: string;
+  link: string;
   featured: boolean;
   past: boolean;
 }
@@ -31,34 +32,38 @@ const Events: React.FC = () => {
         // Mock data
         const mockEvents = [
           {
-            title: "AI Yatra 2025 – Eastern India Roadshow",
-            date: "Jan 10-20, 2025",
-            location: "5 cities in Bihar & Jharkhand",
-            description: "Our team will travel to 5 cities in Bihar & Jharkhand conducting free AI bootcamps for students.",
+            title: "Vibe coding workshop",
+            date: "May 9th, 2025",
+            location: "Virtual",
+            description: "A hands-on workshop for 30 faculty members to help them integrate AI concepts into their teaching.",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSfjMgk1TI1GO-in922U9HcOCrYQKqwRrR8ZPRoViwGeKcCetQ/viewform",
             featured: true,
             past: false,
           },
           {
-            title: "Faculty AI Training Workshop",
-            date: "Feb 15, 2025",
-            location: "Patna, Bihar",
+            title: "Vibe coding workshop",
+            date: "May 9th, 2025",
+            location: "Virtual",
             description: "A hands-on workshop for 30 faculty members to help them integrate AI concepts into their teaching.",
+            link: "https://docs.google.com/forms/d/e/1FAIpQLSfjMgk1TI1GO-in922U9HcOCrYQKqwRrR8ZPRoViwGeKcCetQ/viewform",
             featured: false,
             past: false,
           },
           {
-            title: "Annual AI CoE Summit",
-            date: "July 2025",
-            location: "Ranchi, Jharkhand",
-            description: "Students from all our CoEs showcase projects and connect with industry leaders.",
-            featured: false,
-            past: false,
-          },
-          {
-            title: "AI in Agriculture Hackathon",
-            date: "Nov 2024",
+            title: "Innovation workshop",
+            date: "May 2025",
             location: "Patna, Bihar",
-            description: "We ran an 'AI in Agriculture' hackathon with 100+ student participants – resulting in 5 promising project ideas now being incubated.",
+            description: "Workshop on Innovation & Entrepreneurship. With 70+ students from BBA, BCA, and PGDM actively participating, we explored how local problems can be turned into startup ideas through Design Thinking, Lean Canvas, MVP building, and Bihar-focused innovation.",
+            link: "https://www.linkedin.com/posts/pataliputra-prakalpa_pataliputraprakalpa-innovationworkshop-entrepreneurship-activity-7326328172801642497-OChz",
+            featured: false,
+            past: true,
+          },
+          {
+            title: "AI workshop",
+            date: "May 2025",
+            location: "Patna, Bihar",
+            description: "With the enthusiastic participation of 40+ students from 6 colleges across Patna, the session focused on building not just AI tool awareness, but a deeper understanding of the AI mindset—a critical shift for the innovators and professionals of tomorrow.",
+            link: "https://www.linkedin.com/posts/pataliputra-prakalpa_turiyaprakalpa-aireadiness-innovationecosystem-activity-7327278428506722304-fIeL",
             featured: false,
             past: true,
           },
@@ -172,9 +177,9 @@ const Events: React.FC = () => {
                     </div>
                   </div>
                   <p className="mb-6">{event.description}</p>
-                  <button className="bg-white text-primary hover:bg-gray-100 transition-colors px-6 py-2 rounded-lg font-medium">
+                  <a href={event.link} className="bg-white text-primary hover:bg-gray-100 transition-colors px-6 py-2 rounded-lg font-medium">
                     Register Now
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -204,9 +209,9 @@ const Events: React.FC = () => {
                   </div>
                   <p className="text-gray-600 mb-4">{event.description}</p>
                 </div>
-                <button className="text-primary hover:text-primary-dark transition-colors font-medium text-sm mt-auto">
-                  Learn More →
-                </button>
+                <a href={event.link} className="text-primary hover:text-primary-dark transition-colors font-medium text-sm mt-auto">
+                  Register Now →
+                </a>
               </motion.div>
             ))}
           </div>
@@ -238,10 +243,13 @@ const Events: React.FC = () => {
                   </div>
                   <div className="flex items-center">
                     <Users className="w-4 h-4 mr-1" />
-                    <span>100+ attendees</span>
+                    <span>70+ attendees</span>
                   </div>
                 </div>
                 <p className="text-gray-600">{event.description}</p>
+                <a href={event.link} className="text-primary hover:text-primary-dark transition-colors font-medium text-sm mt-auto">
+                  Learn More →
+                </a>
               </motion.div>
             ))}
           </div>
