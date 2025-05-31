@@ -27,24 +27,24 @@ const OurCoEs: React.FC = () => {
     {
       name: "Indian Institute of Business Management (IIBM)",
       location: "Patna, Bihar",
-      status: "launched",
+      status: "planned",
       date: "2025",
       description: "30 students enrolled in CoE programs, working on business analytics and AI for commerce applications.",
-      icon: <Check className="w-5 h-5" />,
+      icon: <FileText className="w-5 h-5" />,
       image: "https://www.sikshapedia.com/public/data/colleges/indian-institute-of-business-management-patna-bihar/indian-institute-of-business-management-patna-bihar-banner.webp",
-      statusColor: "bg-green-500",
-      statusText: "Launched"
+      statusColor: "bg-blue-500",
+      statusText: "MoU Signed"
     },
     {
       name: "Dr. Zakir Husain Institute (ZHI)",
       location: "Patna, Bihar",
-      status: "launched",
+      status: "planned",
       date: "2025",
       description: "50 students enrolled in CoE programs, focusing on AI for engineering and technology solutions.",
-      icon: <Check className="w-5 h-5" />,
+      icon: <FileText className="w-5 h-5" />,
       image: "https://www.zhi.org.in/public/school_content/zhi/fcms_setting/2XY9t-085016-hMk.jpg",
-      statusColor: "bg-green-500",
-      statusText: "Launched"
+      statusColor: "bg-blue-500",
+      statusText: "MoU Signed"
     }
   ];
 

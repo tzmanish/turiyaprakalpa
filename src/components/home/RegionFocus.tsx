@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import iibm_workshop from '../../Assets/iibm_workshop.jpeg';
 
 const RegionFocus: React.FC = () => {
   const [ref, inView] = useInView({
@@ -73,7 +74,7 @@ const RegionFocus: React.FC = () => {
           >
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src={iibm_workshop} 
                 alt="Students working in tech lab" 
                 className="w-full h-auto"
               />
