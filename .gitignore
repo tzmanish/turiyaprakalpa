@@ -44,6 +44,9 @@ pnpm-debug.log*
 .eslintcache
 .stylelintcache
 
+# Vite
+.vite
+
 # OS
 Thumbs.db
 
