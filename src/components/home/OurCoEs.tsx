@@ -85,7 +85,7 @@ const OurCoEs: React.FC = () => {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-bold">{coe.name}</h3>
-                    <p className="text-gray-600">{coe.location}</p>
+                    <p className="text-gray-600">{coe.location} - {coe.date}</p>
                   </div>
                   <div className={`${coe.statusColor} text-white text-xs px-3 py-1 rounded-full flex items-center`}>
                     {coe.icon}
@@ -93,10 +93,6 @@ const OurCoEs: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4">{coe.description}</p>
-                <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                  <span className="text-sm text-gray-500">{coe.date}</span>
-                  <button className="text-sm text-primary hover:text-primary-dark font-medium">Learn More</button>
-                </div>
               </div>
             </motion.div>
           ))}
