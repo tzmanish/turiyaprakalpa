@@ -41,8 +41,11 @@ export function Navigation() {
     const element = document.getElementById(href.substring(1))
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
+      // Delay closing the menu to allow smooth scroll to finish
+      setTimeout(() => setIsOpen(false), 400)
+    } else {
+      setIsOpen(false)
     }
-    setIsOpen(false)
   }
 
   return (
@@ -118,7 +121,7 @@ export function Navigation() {
                 {navItems.map((item) => (
                   <motion.button
                     key={item.label}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={e => { e.preventDefault(); scrollToSection(item.href) }}
                     className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors ${
                       activeSection === item.href.substring(1)
                         ? "text-foreground bg-accent"
