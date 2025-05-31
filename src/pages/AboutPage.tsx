@@ -9,6 +9,7 @@ import manish from '../../public/people/manish.png';
 import divyanshu from '../../public/people/divyanshu.png';
 import sandeep from '../../public/people/sandeep.png';
 import gaurav from '../../public/people/gaurav.png';
+import amritendu from '../../public/people/amritendu.png';
 import ashish from '../../public/people/ashish.jpeg';
 
 interface TeamMember {
@@ -66,7 +67,7 @@ const AboutPage: React.FC = () => {
       expertise: "Over 21 years in cybersecurity, IoT security, business strategy. Leadership at Intel, Broadcom, Ericsson, Dell.",
       affiliation: "IIM Bangalore, IIT Delhi, BHU",
       linkedin: "https://www.linkedin.com/in/divyanshu-verma-6b05732/",
-      type: "advisor",
+      type: "expert",
       image: divyanshu
     },
     {
@@ -76,6 +77,14 @@ const AboutPage: React.FC = () => {
       linkedin: "https://www.linkedin.com/in/sandeepbagarwal/",
       type: "advisor",
       image: sandeep
+    },
+    {
+      name: "Amritendu Mukherjee",
+      role: "Co-Founder and CTO of NeuroPixel.AI Labs",
+      expertise: "PhD (Engineering) from Indian Institute of Science, Bangalore with primary research interest in application of advanced Machine Learning/Deep Learning algorithms, Statistical Learning Theory in Image Processing and Computer Vision.",
+      linkedin: "https://www.linkedin.com/in/amritendu-mukherjee/",
+      type: "advisor",
+      image: amritendu
     },
     {
       name: "Gaurav Aggarwal",
