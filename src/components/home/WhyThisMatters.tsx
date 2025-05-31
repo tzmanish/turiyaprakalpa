@@ -84,7 +84,8 @@ const WhyThisMatters: React.FC = () => {
 
           <div className="mt-12 text-center">
             <a 
-              href="#contact" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScydq9aZ0rJBuW6-7a1PHHE2MSR9bJuut5NlGLFR7qN10Elow/viewform?usp=header_redirect"
+              target="_blank" 
               className="btn bg-white text-primary hover:bg-gray-100 transition-colors inline-flex items-center"
             >
               Join the Movement
