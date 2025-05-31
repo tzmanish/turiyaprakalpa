@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
         <img 
           src={cover} 
           alt="AI Innovation Cover" 
-          className="w-full h-full object-contain opacity-30 select-none pointer-events-none" 
+          className="w-full h-full object-contain opacity-60 select-none pointer-events-none" 
           style={{ position: 'absolute', inset: 0, zIndex: 0 }}
           draggable="false"
         />

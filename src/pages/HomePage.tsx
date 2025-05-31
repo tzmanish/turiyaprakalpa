@@ -10,7 +10,7 @@ import OurCoEs from '../components/home/OurCoEs';
 // import Partners from '../components/home/Partners';
 import Events from '../components/home/Events';
 import WhyThisMatters from '../components/home/WhyThisMatters';
-import AboutParent from '../components/home/AboutParent';
+// import AboutParent from '../components/home/AboutParent';
 
 const HomePage: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
         {/* <Partners /> */}
         <Events />
         <WhyThisMatters />
-        <AboutParent />
+        {/* <AboutParent /> */}
       </main>
       <Footer />
     </div>
