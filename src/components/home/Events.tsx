@@ -172,9 +172,14 @@ const Events: React.FC = () => {
                     </div>
                   </div>
                   <p className="mb-6">{event.description}</p>
-                  <button className="bg-white text-primary hover:bg-gray-100 transition-colors px-6 py-2 rounded-lg font-medium">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfjMgk1TI1GO-in922U9HcOCrYQKqwRrR8ZPRoViwGeKcCetQ/viewform?usp=header"
+                    className="bg-white text-primary hover:bg-gray-100 transition-colors px-6 py-2 rounded-lg font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Register Now
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
