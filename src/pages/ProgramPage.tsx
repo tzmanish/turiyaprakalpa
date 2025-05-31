@@ -260,10 +260,10 @@ const ProgramPage: React.FC = () => {
                 Join the next cohort at one of our AI Centers of Excellence and transform your career prospects.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="btn bg-white text-primary hover:bg-gray-100 transition-colors">
+                {/* <button className="btn bg-white text-primary hover:bg-gray-100 transition-colors">
                   Join the Next Cohort
-                </button>
-                <a href="#contact" className="btn bg-transparent border-2 border-white hover:bg-white hover:text-primary">
+                </button> */}
+                <a href="#contact" className="btn bg-white text-primary hover:bg-gray-100 transition-colors">
                   Contact for More Information
                 </a>
               </div>
