@@ -1,22 +1,25 @@
 "use client"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import React from "react"
+import { useEffect, useState } from "react"
 
 import { Switch } from "@/components/ui/switch"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
-
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light")
+  }
+
+  if (!mounted) {
+    // Prevent hydration mismatch by rendering nothing until mounted
+    return null
   }
 
   return (

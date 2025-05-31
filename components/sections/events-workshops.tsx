@@ -16,6 +16,7 @@ const events = [
     attendees: "30 faculty members",
     status: "upcoming",
     statusColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     title: "Innovation workshop",
@@ -27,6 +28,7 @@ const events = [
     attendees: "70+ attendees",
     status: "past",
     statusColor: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     title: "AI workshop",
@@ -38,6 +40,7 @@ const events = [
     attendees: "70+ attendees",
     status: "past",
     statusColor: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
+    image: "/placeholder.svg?height=200&width=300",
   },
 ]
 
@@ -69,12 +72,18 @@ export function EventsWorkshops() {
               viewport={{ once: true }}
             >
               <Card
-                className={`h-full group hover:shadow-lg transition-all duration-300 ${
+                className={`h-full group hover:shadow-lg transition-all duration-300 overflow-hidden ${
                   event.status === "upcoming" ? "ring-2 ring-blue-200 dark:ring-blue-800" : ""
                 }`}
               >
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={event.image || "/placeholder.svg"}
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute top-4 left-4 flex gap-2">
                     <Badge className={event.statusColor}>{event.type}</Badge>
                     {event.status === "upcoming" && (
                       <Badge
@@ -85,6 +94,8 @@ export function EventsWorkshops() {
                       </Badge>
                     )}
                   </div>
+                </div>
+                <CardHeader>
                   <CardTitle className="text-xl mb-4 group-hover:text-blue-600 transition-colors">
                     {event.title}
                   </CardTitle>

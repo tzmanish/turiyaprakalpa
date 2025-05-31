@@ -17,28 +17,112 @@ export function HeroSection() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-background dark:from-blue-950/20 dark:via-purple-950/10 dark:to-background" />
 
-      {/* Animated background elements */}
+      {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
+        {/* Large floating orbs */}
+        {[...Array(3)].map((_, i) => (
           <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400/20 rounded-full"
+            key={`orb-${i}`}
+            className="absolute rounded-full opacity-20"
+            style={{
+              background: `radial-gradient(circle, ${
+                i === 0 ? "rgba(59, 130, 246, 0.4)" : i === 1 ? "rgba(147, 51, 234, 0.4)" : "rgba(236, 72, 153, 0.4)"
+              } 0%, transparent 70%)`,
+              width: `${200 + i * 100}px`,
+              height: `${200 + i * 100}px`,
+              filter: "blur(40px)",
+            }}
             animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
+              x: [0, 100, -50, 0],
+              y: [0, -80, 50, 0],
+              scale: [1, 1.2, 0.8, 1],
             }}
             transition={{
-              duration: 4 + i,
+              duration: 8 + i * 2,
               repeat: Number.POSITIVE_INFINITY,
-              delay: i * 0.5,
+              ease: "easeInOut",
+              delay: i * 1.5,
             }}
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
+            initial={{
+              left: `${20 + i * 30}%`,
+              top: `${10 + i * 20}%`,
             }}
           />
         ))}
+
+        {/* Floating particles */}
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={`particle-${i}`}
+            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            style={{
+              filter: "blur(0.5px)",
+            }}
+            animate={{
+              x: [0, Math.sin(i) * 150, 0],
+              y: [0, Math.cos(i) * 100, 0],
+              opacity: [0, 1, 0.5, 0],
+              scale: [0, 1, 1.5, 0],
+            }}
+            transition={{
+              duration: 6 + (i % 3),
+              repeat: Number.POSITIVE_INFINITY,
+              delay: i * 0.3,
+              ease: "easeInOut",
+            }}
+            style={{
+              left: `${10 + ((i * 8) % 80)}%`,
+              top: `${20 + ((i * 6) % 60)}%`,
+            }}
+          />
+        ))}
+
+        {/* Glassy floating elements */}
+        {[...Array(4)].map((_, i) => (
+          <motion.div
+            key={`glass-${i}`}
+            className="absolute rounded-2xl backdrop-blur-sm border border-white/10"
+            style={{
+              background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+              width: `${60 + i * 20}px`,
+              height: `${60 + i * 20}px`,
+              boxShadow: "0 8px 32px rgba(0,0,0,0.1)",
+            }}
+            animate={{
+              x: [0, 80, -40, 0],
+              y: [0, -60, 40, 0],
+              rotate: [0, 180, 360],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 10 + i,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: i * 0.8,
+            }}
+            style={{
+              left: `${60 + i * 15}%`,
+              top: `${30 + i * 15}%`,
+            }}
+          />
+        ))}
+
+        {/* Gradient waves */}
+        <motion.div
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: "radial-gradient(ellipse 80% 50% at 50% 120%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)",
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">

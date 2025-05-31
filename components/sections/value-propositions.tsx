@@ -54,8 +54,11 @@ export function ValuePropositions() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full group hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/30">
-                <CardContent className="p-8">
+              <Card className="h-full group hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-background to-muted/30 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-5">
+                  <img src="/placeholder.svg?height=128&width=128" alt="" className="w-full h-full object-cover" />
+                </div>
+                <CardContent className="p-8 relative z-10">
                   <div
                     className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${prop.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >

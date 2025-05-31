@@ -14,6 +14,7 @@ const centers = [
     description:
       "The integration of courses and student registration is currently in progress, with workshops scheduled to launch in the first week of July.",
     statusColor: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     name: "Dr. Zakir Husain Institute (ZHI)",
@@ -23,6 +24,7 @@ const centers = [
     description:
       "The integration of courses and student registration is currently in progress, with workshops scheduled to launch in the first week of July.",
     statusColor: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+    image: "/placeholder.svg?height=200&width=300",
   },
 ]
 
@@ -57,26 +59,30 @@ export function CentersOfExcellence() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full group hover:shadow-lg transition-all duration-300">
+              <Card className="h-full group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={center.image || "/placeholder.svg"}
+                    alt={center.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <Badge className={`absolute top-4 right-4 ${center.statusColor}`}>
+                    <CheckCircle className="w-3 h-3 mr-1" />
+                    {center.status}
+                  </Badge>
+                </div>
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <CardTitle className="text-xl mb-2 group-hover:text-blue-600 transition-colors">
-                        {center.name}
-                      </CardTitle>
-                      <div className="flex items-center text-muted-foreground mb-2">
-                        <MapPin className="w-4 h-4 mr-2" />
-                        {center.location}
-                      </div>
-                      <div className="flex items-center text-muted-foreground mb-4">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {center.date}
-                      </div>
-                    </div>
-                    <Badge className={center.statusColor}>
-                      <CheckCircle className="w-3 h-3 mr-1" />
-                      {center.status}
-                    </Badge>
+                  <CardTitle className="text-xl mb-2 group-hover:text-blue-600 transition-colors">
+                    {center.name}
+                  </CardTitle>
+                  <div className="flex items-center text-muted-foreground mb-2">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    {center.location}
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {center.date}
                   </div>
                 </CardHeader>
                 <CardContent>

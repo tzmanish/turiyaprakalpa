@@ -69,6 +69,31 @@ export function BuildingFrontier() {
         </div>
 
         <motion.div
+          className="mb-16 relative"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+            <img
+              src="/placeholder.svg?height=400&width=800"
+              alt="Students working on AI projects in regional colleges"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/80" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Empowering Regional Innovation</h3>
+                <p className="text-lg opacity-90 max-w-2xl">
+                  Transforming underserved regions into emerging hubs of AI innovation across India
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
           className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-2xl p-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

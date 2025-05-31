@@ -12,6 +12,7 @@ const coreTeam = [
     role: "CEO and Founder",
     expertise: "Marketing, Branding, Program management, Strategy, Social entrepreneurship",
     affiliation: "IIT Roorkee",
+    image: "/placeholder.svg?height=200&width=200",
   },
   {
     name: "Manish Kushwaha",
@@ -19,6 +20,7 @@ const coreTeam = [
     expertise:
       "Architecting efficient data solutions with Java, Spark, and Hadoop on Azure. Optimising data processing & full-stack development",
     affiliation: "IIT Roorkee",
+    image: "/placeholder.svg?height=200&width=200",
   },
 ]
 
@@ -28,12 +30,14 @@ const advisors = [
     role: "Global CTO at Visionet Systems Inc. and MD of Visionet India",
     expertise:
       "Thought leader in digital innovation, strategy, technology leadership. Author of P.R.I.D.E. Recipient of Indian Achiever's Award.",
+    image: "/placeholder.svg?height=200&width=200",
   },
   {
     name: "Amritendu Mukherjee",
     role: "Co-Founder and CTO of NeuroPixel.AI Labs",
     expertise:
       "PhD (Engineering) from Indian Institute of Science, Bangalore with primary research interest in application of advanced Machine Learning/Deep Learning algorithms, Statistical Learning Theory in Image Processing and Computer Vision.",
+    image: "/placeholder.svg?height=200&width=200",
   },
 ]
 
@@ -44,6 +48,7 @@ const expertNetwork = [
     expertise:
       "Over 21 years in cybersecurity, IoT security, business strategy. Leadership at Intel, Broadcom, Ericsson, Dell.",
     affiliation: "IIM Bangalore, IIT Delhi, BHU",
+    image: "/placeholder.svg?height=150&width=150",
   },
   {
     name: "Gaurav Aggarwal",
@@ -51,12 +56,14 @@ const expertNetwork = [
     expertise:
       "Computer vision and machine learning, AI research/product innovation at Yahoo Labs, Ola Cabs, Snapdeal.",
     affiliation: "BTech from IIT Madras, PhD from University of Maryland",
+    image: "/placeholder.svg?height=150&width=150",
   },
   {
     name: "Ashish Kaushik",
     role: "CredFlow - MSME lending and growth strategies",
     expertise: "Business strategy, product management, financial modelling. Co-founder experience (Lifepay, Mooofarm).",
     affiliation: "IIT Roorkee",
+    image: "/placeholder.svg?height=150&width=150",
   },
 ]
 
@@ -93,9 +100,17 @@ export function AboutUs() {
           <div className="grid md:grid-cols-2 gap-8">
             {coreTeam.map((member, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
+                <CardHeader className="text-center">
+                  <div className="relative w-32 h-32 mx-auto mb-4">
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-full h-full rounded-full object-cover border-4 border-blue-100 dark:border-blue-900/30 group-hover:border-blue-200 dark:group-hover:border-blue-800/50 transition-colors"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                   <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">{member.name}</CardTitle>
-                  <Badge variant="outline" className="w-fit">
+                  <Badge variant="outline" className="w-fit mx-auto">
                     {member.role}
                   </Badge>
                 </CardHeader>
@@ -135,11 +150,19 @@ export function AboutUs() {
           <div className="grid md:grid-cols-2 gap-8">
             {advisors.map((advisor, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
+                <CardHeader className="text-center">
+                  <div className="relative w-28 h-28 mx-auto mb-4">
+                    <img
+                      src={advisor.image || "/placeholder.svg"}
+                      alt={advisor.name}
+                      className="w-full h-full rounded-full object-cover border-4 border-purple-100 dark:border-purple-900/30 group-hover:border-purple-200 dark:group-hover:border-purple-800/50 transition-colors"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                   <CardTitle className="text-xl group-hover:text-purple-600 transition-colors">
                     {advisor.name}
                   </CardTitle>
-                  <Badge variant="outline" className="w-fit">
+                  <Badge variant="outline" className="w-fit mx-auto">
                     {advisor.role}
                   </Badge>
                 </CardHeader>
@@ -175,9 +198,17 @@ export function AboutUs() {
           <div className="grid md:grid-cols-3 gap-6">
             {expertNetwork.map((expert, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
+                <CardHeader className="text-center">
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <img
+                      src={expert.image || "/placeholder.svg"}
+                      alt={expert.name}
+                      className="w-full h-full rounded-full object-cover border-3 border-green-100 dark:border-green-900/30 group-hover:border-green-200 dark:group-hover:border-green-800/50 transition-colors"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-green-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
                   <CardTitle className="text-lg group-hover:text-green-600 transition-colors">{expert.name}</CardTitle>
-                  <Badge variant="outline" className="w-fit text-xs">
+                  <Badge variant="outline" className="w-fit mx-auto text-xs">
                     {expert.role}
                   </Badge>
                 </CardHeader>
