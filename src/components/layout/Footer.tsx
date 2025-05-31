@@ -8,21 +8,21 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1 - About */}
-          <div>
+          <div className='md:col-span-2'>
             <h3 className="text-xl font-bold mb-4">Turiya Prakalpa</h3>
             <p className="text-gray-300 mb-4">
               Building AI Centres of Excellence in underserved regions to empower the next generation of innovators.
             </p>
             <div className="flex space-x-4">
-              <a href="https://linkedin.com" className="text-gray-300 hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/company/pataliputra-prakalpa/" className="text-gray-300 hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="https://twitter.com" className="text-gray-300 hover:text-primary transition-colors">
+              {/* <a href="https://twitter.com" className="text-gray-300 hover:text-primary transition-colors">
                 <Twitter size={20} />
               </a>
               <a href="https://facebook.com" className="text-gray-300 hover:text-primary transition-colors">
                 <Facebook size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="#events" className="text-gray-300 hover:text-primary transition-colors">
                   Events
                 </a>
@@ -54,12 +54,12 @@ const Footer: React.FC = () => {
                 <a href="#contact" className="text-gray-300 hover:text-primary transition-colors">
                   Contact Us
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Column 3 - Programs */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Programs</h3>
             <ul className="space-y-2">
               <li>
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 4 - Contact */}
           <div id="contact">
@@ -91,18 +91,18 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Mail size={20} className="text-primary mt-1" />
-                <span className="text-gray-300">info@turiyaprakalpa.org</span>
+                <span className="text-gray-300"><a href="mailto:reach@turiyaprakalpa.com">reach@turiyaprakalpa.com</a></span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone size={20} className="text-primary mt-1" />
-                <span className="text-gray-300">+91 9876543210</span>
+                <span className="text-gray-300"><a href="tel:+91 9027201935">+91 9027201935</a></span>
               </li>
-              <li className="flex items-start space-x-3">
+              {/* <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-primary mt-1" />
                 <span className="text-gray-300">
                   Patna, Bihar, India
                 </span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
