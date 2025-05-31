@@ -52,7 +52,7 @@ const AboutParent: React.FC = () => {
                     <div>
                       <h5 className="text-lg font-semibold mb-2">1. The Opportunity & Our Vision</h5>
                       <p className="mb-4 italic">
-                        "To forge a dynamic innovation ecosystem in Bihar and its neighbours, unlocking the region's vast latent potential. We bridge local talent and ventures with global opportunities, creating an entrepreneur-led hub for technology, entrepreneurship, and accelerated development."
+                        "To forge a dynamic innovation ecosystem in India's large vast latent potential  in emerging regions. We bridge local talent and ventures with global opportunities, creating an entrepreneur-led hub for technology, entrepreneurship, and accelerated development."
                       </p>
                       
                       <h6 className="font-semibold mb-2">Why Now? The Imperative for Action:</h6>
