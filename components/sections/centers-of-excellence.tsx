@@ -14,7 +14,7 @@ const centers = [
     description:
       "The integration of courses and student registration is currently in progress, with workshops scheduled to launch in the first week of July.",
     statusColor: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/iibm.png",
   },
   {
     name: "Dr. Zakir Husain Institute (ZHI)",
@@ -24,7 +24,7 @@ const centers = [
     description:
       "The integration of courses and student registration is currently in progress, with workshops scheduled to launch in the first week of July.",
     statusColor: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/zhi.png",
   },
 ]
 

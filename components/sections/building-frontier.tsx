@@ -77,7 +77,7 @@ export function BuildingFrontier() {
         >
           <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
             <img
-              src="/placeholder.svg?height=400&width=800"
+              src="/cover.png"
               alt="Students working on AI projects in regional colleges"
               className="w-full h-full object-cover"
             />

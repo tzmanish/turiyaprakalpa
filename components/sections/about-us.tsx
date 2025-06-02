@@ -12,7 +12,7 @@ const coreTeam = [
     role: "CEO and Founder",
     expertise: "Marketing, Branding, Program management, Strategy, Social entrepreneurship",
     affiliation: "IIT Roorkee",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/people/harsh.png",
   },
   {
     name: "Manish Kushwaha",
@@ -20,7 +20,7 @@ const coreTeam = [
     expertise:
       "Architecting efficient data solutions with Java, Spark, and Hadoop on Azure. Optimising data processing & full-stack development",
     affiliation: "IIT Roorkee",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/people/manish.png",
   },
 ]
 
@@ -30,14 +30,14 @@ const advisors = [
     role: "Global CTO at Visionet Systems Inc. and MD of Visionet India",
     expertise:
       "Thought leader in digital innovation, strategy, technology leadership. Author of P.R.I.D.E. Recipient of Indian Achiever's Award.",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/people/sandeep.png",
   },
   {
     name: "Amritendu Mukherjee",
     role: "Co-Founder and CTO of NeuroPixel.AI Labs",
     expertise:
       "PhD (Engineering) from Indian Institute of Science, Bangalore with primary research interest in application of advanced Machine Learning/Deep Learning algorithms, Statistical Learning Theory in Image Processing and Computer Vision.",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/people/amritendu.png",
   },
 ]
 
@@ -48,7 +48,7 @@ const expertNetwork = [
     expertise:
       "Over 21 years in cybersecurity, IoT security, business strategy. Leadership at Intel, Broadcom, Ericsson, Dell.",
     affiliation: "IIM Bangalore, IIT Delhi, BHU",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/people/divyanshu.png",
   },
   {
     name: "Gaurav Aggarwal",
@@ -56,14 +56,14 @@ const expertNetwork = [
     expertise:
       "Computer vision and machine learning, AI research/product innovation at Yahoo Labs, Ola Cabs, Snapdeal.",
     affiliation: "BTech from IIT Madras, PhD from University of Maryland",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/people/gaurav.png",
   },
   {
     name: "Ashish Kaushik",
     role: "CredFlow - MSME lending and growth strategies",
     expertise: "Business strategy, product management, financial modelling. Co-founder experience (Lifepay, Mooofarm).",
     affiliation: "IIT Roorkee",
-    image: "/placeholder.svg?height=150&width=150",
+    image: "/people/ashish.png",
   },
 ]
 
