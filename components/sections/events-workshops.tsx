@@ -16,7 +16,7 @@ const events = [
     attendees: "30 faculty members",
     status: "upcoming",
     statusColor: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400",
-    image: "/Online Workhop.jfif",
+    image: "/online_workshop.jfif",
   },
   {
     title: "Innovation workshop",
@@ -28,7 +28,7 @@ const events = [
     attendees: "70+ attendees",
     status: "past",
     statusColor: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400",
-    image: "/Innovaiton Workshop.jfif",
+    image: "/innovation_workshop.jfif",
   },
   {
     title: "AI workshop",
