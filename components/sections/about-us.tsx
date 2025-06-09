@@ -16,7 +16,7 @@ const coreTeam = [
   },
   {
     name: "Manish Kushwaha",
-    role: "CTO and Co-Founder",
+    role: "Tech Advisor",
     expertise:
       "Architecting efficient data solutions with Java, Spark, and Hadoop on Azure. Optimising data processing & full-stack development",
     affiliation: "IIT Roorkee",
