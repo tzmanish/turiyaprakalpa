@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(255, 82%, 35%);
+  --color-light-primary: hsl(from var(--color-primary) h s calc(l + 10));
+  --color-dark-primary: hsl(from var(--color-primary) h s calc(l - 10));
+
+  --color-secondary: hsl(334, 85%, 50%);
+  --color-light-secondary: hsl(from var(--color-secondary) h s calc(l + 10));
+  --color-dark-secondary: hsl(from var(--color-secondary) h s calc(l - 10));
+
+  --color-base1: hsl(0, 0%, 96%);
+
+  --font-noto-sans: "Noto Sans", sans-serif;
+
+  --animate-hover: hover 3s ease-in-out infinite;
+  @keyframes hover {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+body {
+  margin: 0;
+  @apply font-noto-sans;
+}
