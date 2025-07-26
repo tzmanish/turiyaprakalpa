@@ -10,7 +10,7 @@ const Footer = () => {
     const [email, setEmail] = useState("");
 
     return (
-        <footer className='bg-base1 pt-12'>
+        <footer className='bg-base-white pt-12'>
             <div className="w-full mx-auto my-4 container">
 
                 <div className="flex flex-row justify-between gap-8">

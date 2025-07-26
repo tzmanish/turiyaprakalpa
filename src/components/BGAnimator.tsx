@@ -28,7 +28,7 @@ import BgShape12 from '../assets/bg/BgShape12';
 //             Component: componentList[i % componentList.length],
 //             x: getRandomArbitrary(0, 1920),
 //             y: getRandomArbitrary(0, 1080),
-//             size: getRandomArbitrary(40, 60),
+//             size: 96,
 //             speed: getRandomArbitrary(0.2, 0.5),
 //             vx: -1 * getRandomArbitrary(0.2, 0.5),
 //             vy: -1 * getRandomArbitrary(0.2, 0.5),
@@ -108,7 +108,7 @@ import BgShape12 from '../assets/bg/BgShape12';
 //     }, [dimensions]);
 
 //     return (
-//         <div ref={containerRef} className="h-screen w-screen fixed top-0 left-0 -z-20 overflow-hidden">
+//         <div ref={containerRef} className="h-screen w-full fixed top-0 left-0 -z-20 overflow-hidden">
 //             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-20" />
 //             <div className="absolute inset-0 -z-10">
 //                 {shapes.map(shape => {

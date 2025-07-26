@@ -9,7 +9,7 @@
   --color-light-secondary: hsl(from var(--color-secondary) h s calc(l + 10));
   --color-dark-secondary: hsl(from var(--color-secondary) h s calc(l - 10));
 
-  --color-base1: hsl(0, 0%, 96%);
+  --color-base-white: hsl(0, 0%, 96%);
 
   --font-noto-sans: "Noto Sans", sans-serif;
 

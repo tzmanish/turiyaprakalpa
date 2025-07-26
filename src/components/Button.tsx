@@ -15,13 +15,13 @@ const Button = ({ onClick, children, customClasses = "", disabled = false, type 
             onClick={onClick}
             className={
                 twMerge(
-                    "w-fit text-base1 bg-primary hover:bg-dark-primary cursor-pointer font-semibold px-6 py-3 rounded-full transition-all duration-200 scale-[99%] hover:scale-100 shadow-lg hover:shadow-xl",
+                    "w-fit text-base-white bg-primary hover:bg-dark-primary cursor-pointer font-semibold px-6 py-3 rounded-full transition-all duration-200 scale-[99%] hover:scale-100 shadow-lg hover:shadow-xl",
                     disabled && "opacity-80 cursor-not-allowed",
-                    bg && `relative text-lg font-bold overflow-hidden
+                    bg && `relative font-bold overflow-hidden
                     before:content-['']
                     before:absolute
                     before:-inset-full
-                    before:bg-[conic-gradient(from_90deg_at_50%_50%,var(--color-base1)_0%,var(--color-secondary)_50%,var(--color-base1)_50%,var(--color-primary)_100%)]
+                    before:bg-[conic-gradient(from_90deg_at_50%_50%,var(--color-base-white)_0%,var(--color-secondary)_50%,var(--color-base-white)_50%,var(--color-primary)_100%)]
                     before:animate-[spin_4s_linear_infinite]
                     before:blur-3xl`,
                     customClasses

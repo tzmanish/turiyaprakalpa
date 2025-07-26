@@ -1,6 +1,6 @@
 const BgShape6 = ({ style = {} }) => {
   return (
-    <svg className="absolute filter drop-shadow-lg transition-none" style={style} height={48} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.69 485.02">
+    <svg className="absolute filter drop-shadow-lg transition-none" style={style} height={96} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.69 485.02">
       <g>
           <path fill='#e5e545' strokeWidth={0} d="m331.82,62.32C298.06,24.01,248.61-.12,193.51,0,92.45.22,9.08,84.75,10.19,185.81c.11,9.81.99,19.43,2.57,28.82,4.66,27.55,3.24,55.88-5.55,82.4C2.72,310.61.21,325.09.01,340.13c-1.02,79.4,63.58,144.89,143,144.89,17.71,0,34.67-3.22,50.32-9.11,30.64-11.53,63.16-17.14,95.89-16.82.63,0,1.25,0,1.88,0,101.7,0,185.79-84.27,185.59-185.97-.13-62.31-30.96-117.41-78.18-150.97-24.44-17.37-46.87-37.35-66.69-59.85Z"/>
       </g>
